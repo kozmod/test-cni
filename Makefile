@@ -7,6 +7,6 @@ install:
 	sudo cp build/test-cni /opt/cni/bin/
 	sudo chmod +x /opt/cni/bin/test-cni
 
-.PHONY: tail.logs
-tail.logs:
+.PHONY: tail.log
+tail.log:
 	tail -f /var/log/test-cni.log

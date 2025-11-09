@@ -44,7 +44,7 @@ func CmdAdd(args *skel.CmdArgs) error {
 		return fmt.Errorf("CmdAdd() - unmarshal StdinData: %v", err)
 	}
 
-	b, err = json.Marshal(*args)
+	b, err = json.Marshal(sb)
 	if err != nil {
 		return fmt.Errorf("marshal CmdArgs: %w", err)
 	}
