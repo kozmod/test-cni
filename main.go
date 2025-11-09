@@ -6,6 +6,7 @@ import (
 	"runtime"
 
 	"github.com/containernetworking/cni/pkg/skel"
+	"github.com/containernetworking/cni/pkg/types"
 	"github.com/containernetworking/cni/pkg/version"
 )
 
@@ -13,9 +14,7 @@ var (
 	logger, _ = NewLogger(DefaultLogFilePath)
 )
 
-type TestCNI struct {
-	CniVersion string `json:"cniVersion"`
-}
+type TestCNI = types.NetConf
 
 func init() {
 	runtime.LockOSThread()
