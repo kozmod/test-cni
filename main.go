@@ -36,13 +36,15 @@ func CmdAdd(args *skel.CmdArgs) error {
 		return fmt.Errorf("marshal CmdArgs: %w", err)
 	}
 
-	logger.Infof("CmdAdd: %s", string(b))
+	logger.Infof("CmdArgs: %s", string(b))
 
 	sb := TestCNI{}
 	err = json.Unmarshal(args.StdinData, &sb)
 	if err != nil {
 		return fmt.Errorf("CmdAdd() - unmarshal StdinData: %v", err)
 	}
+
+	logger.Infof("TestCNI: %s", string(b))
 
 	return nil
 	//return types.PrintResult(result, sb.CniVersion)
